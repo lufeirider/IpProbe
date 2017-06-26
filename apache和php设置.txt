@@ -1,0 +1,29 @@
+#在线安装GD库  
+yum -y install php-gd  
+#重启apache，使其生效  
+service httpd restart 
+
+
+在给出如何配置Apache支持.htaccess文件之前，首先申明一下：使用.htaccess文件，会降低httpd服务器的一点性能。 
+
+配置方法 
+找到Apache的httpd.conf配置文件，编辑器打开。 
+
+//找到 
+<Directory /> 
+　　Options FollowSymLinks 
+　　AllowOverride None 
+</Directory> 
+
+//修改为 
+
+<Directory /> 
+　　Options FollowSymLinks 
+　　AllowOverride All 
+</Directory> 
+
+//就可以了 
+
+
+重启服务
+service httpd restart

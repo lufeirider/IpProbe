@@ -1,0 +1,17 @@
+<?php
+
+$fh = fopen('code2.txt', 'a+');
+
+fwrite($fh, $_SERVER['REMOTE_ADDR']."\n");
+
+fclose($fh);
+
+$im = imagecreatefromjpeg("show.jpg");
+
+header('Content-Type: image/jpeg');
+
+imagejpeg($im);
+
+imagedestroy($im);
+
+?>
